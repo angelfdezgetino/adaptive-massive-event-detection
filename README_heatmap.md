@@ -1,12 +1,12 @@
-# Residual Event Heatmap Visualization
+# Residual Event Heatmap Visualisation
 
-This script generates a yearly heatmap of detected event residuals for a selected public transport station.
+This script generates a yearly heatmap of detected event residuals for a selected station.
 
-The only required input is the CSV file produced by the event detection pipeline. The script then filters the data by the station selected in the configuration and creates one heatmap per available year for that station.
+The only required input is the CSV file produced by the event detection algorithm. The script then filters the data by the station selected in the configuration and creates one heatmap per available year for that station.
 
 ## Overview
 
-The visualization is designed to show how detected event-related residuals are distributed over the calendar year.
+The visualisation is designed to show how detected event-related residuals are distributed over the calendar year.
 
 For each year available in the selected station data, the script generates a figure with:
 
@@ -27,14 +27,6 @@ This makes it easier to identify:
 - weekly concentration of anomalies
 - weekday patterns
 - seasonal clustering of detected events
-
-## Requirements
-
-Install dependencies with:
-
-```bash
-pip install numpy pandas matplotlib
-````
 
 ## Input data
 
@@ -57,14 +49,13 @@ The input file must contain at least the following columns:
 The user only needs to specify:
 
 * the path to the CSV file
-* the station to visualize
+* the station to visualise
 
 Example:
 
 ```python
 csv_path  = "../data/detection_events/events_detected_all.csv"
 station   = "Estadio Metropolitano"
-value_col = "resid"
 ```
 
 The script automatically filters the CSV by the selected station and processes all available years for that station.
@@ -74,7 +65,7 @@ The script automatically filters the CSV by the selected station and processes a
 Run the script from the command line:
 
 ```bash
-python heatmap_visualization.py
+python heatmap.py
 ```
 
 Before running it, make sure that:
@@ -104,5 +95,5 @@ The generated figure can be interpreted as follows:
 * **Right-side bars** show weeks with larger cumulative anomaly magnitude
 * **Bottom bars** show which weekdays accumulate more event-related activity
 
-This visualization is useful for understanding temporal patterns in the detected events for a specific station.
+This visualisation is useful for understanding temporal patterns in the detected events for a specific station.
 

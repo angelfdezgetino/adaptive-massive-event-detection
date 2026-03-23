@@ -2,7 +2,7 @@
 
 This repository contains a Python algorithm for detecting massive event-related demand peaks in public transport station time series.
 
-The method combines seasonal decomposition, residual behavior analysis, a Hampel-based preprocessing stage, and adaptive event detection using either IQR or MAD to compute thresholds depending on the detected temporal behaviour.
+The method combines seasonal decomposition, residual behaviour analysis, a Hampel-based preprocessing stage, and adaptive event detection using either IQR or MAD to compute thresholds depending on the detected temporal behaviour.
 
 ## Overview
 
@@ -18,10 +18,11 @@ The workflow includes:
    - **IQR-based detection** for collective event behaviours
    - **MAD-based detection** for punctual event behaviours
 6. **Optional evaluation** against known event calendars
-7. **Optional visualization** for single-station analysis
+7. **Optional visualisation** for single-station analysis
 8. **CSV export** of detected events
 
 ## Repository contents
+
 ```text
 metro-event-detection/
 ├── .gitignore
@@ -31,6 +32,7 @@ metro-event-detection/
 └── data/
     └── README.md
 ```
+
 ## Main script
 
 The main script in this repository is:
@@ -76,7 +78,7 @@ The main input file is expected at:
 This file must contain at least the following columns:
 
 * `FECHA` - date
-* `VALOR` - daily card validations value
+* `VALOR` - daily card validation count
 * `NOMBRE` - station name
 
 The script also optionally uses:
@@ -95,7 +97,7 @@ For evaluation against known events, the script expects the following files:
 
 These files must contain at least:
 
-* `FECHA` — event date
+* `FECHA` - event date
 
 ## Execution
 
@@ -128,7 +130,7 @@ Station (exact name or All): Ventas
 Year (e.g., 2023 or All): 2023
 ```
 
-This mode analyzes one station for one specific year.
+This mode analyses one station for one specific year.
 
 #### 2. Single station, all available years
 
@@ -137,7 +139,7 @@ Station (exact name or All): Ventas
 Year (e.g., 2023 or All): All
 ```
 
-This mode analyzes one station across all available years in the selected date range.
+This mode analyses one station across all available years in the selected date range.
 
 #### 3. All stations, single year
 
@@ -146,7 +148,7 @@ Station (exact name or All): All
 Year (e.g., 2023 or All): 2023
 ```
 
-This mode analyzes all stations for one specific year.
+This mode analyses all stations for one specific year.
 
 #### 4. All stations, all available years
 
@@ -218,6 +220,7 @@ The exported file includes the following columns:
 * `mode`
 
 ## Notes on execution
+
 The current configuration is set for the **post-COVID** period:
 
 * `START_DATE = "2021-01-01"`

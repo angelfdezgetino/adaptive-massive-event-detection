@@ -163,8 +163,8 @@ for y in years:
     
     month_starts = pd.date_range(d0, d1, freq="MS")
     month_ends   = list(month_starts[1:] - pd.Timedelta(days=1)) + [d1]
-    row_start = [row_of_date(d) for d in month_starts]   # 1ª semana del mes (contiene el día 1)
-    row_end   = [row_of_date(d) for d in month_ends]     # última semana del mes
+    row_start = [row_of_date(d) for d in month_starts]   
+    row_end   = [row_of_date(d) for d in month_ends]     
     centers   = [(a + b) / 2 for a, b in zip(row_start, row_end)]
     axM.set_yticks([])
 
@@ -178,7 +178,7 @@ for y in years:
     y_pos = np.arange(n_weeks)
     axR.barh(y_pos, weekly_totals, height=BAR_H, color="#2171b5")
     axR.set_ylim(axM.get_ylim())
-    axR.set_yticks([])                 # sin etiquetas (las de mes están en axM)
+    axR.set_yticks([])                 
     axR.spines["left"].set_visible(False)
     axR.set_xlim(0, weekly_totals.max()*1.05 if weekly_totals.max()>0 else 1)
     axR.tick_params(axis="x", labelsize=5, pad=1, length=1.2, width=0.5)

@@ -1,4 +1,3 @@
-````md
 # Residual Event Heatmap Visualization
 
 This script generates a yearly heatmap of detected event residuals for a selected public transport station.
@@ -107,6 +106,3 @@ The generated figure can be interpreted as follows:
 
 This visualization is useful for understanding temporal patterns in the detected events for a specific station.
 
-
-```
-```

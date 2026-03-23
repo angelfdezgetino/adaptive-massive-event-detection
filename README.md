@@ -1,4 +1,3 @@
-````md
 # Adaptive Massive Event Detection Algorithm
 
 This repository contains a Python algorithm for detecting massive event-related demand peaks in public transport station time series.
@@ -226,5 +225,4 @@ The current configuration is set for the **post-COVID** period:
 * `START_DATE = "2021-01-01"`
 * `END_DATE = "2024-09-30"`
 
-```
-```
+

@@ -2,11 +2,11 @@
 
 This repository contains a Python algorithm for detecting massive event-related demand peaks in public transport station time series.
 
-The method combines seasonal decomposition, residual behavior analysis, a Hampel-based preprocessing stage, and adaptive event detection using either IQR- or MAD-based thresholds depending on the detected temporal pattern.
+The method combines seasonal decomposition, residual behavior analysis, a Hampel-based preprocessing stage, and adaptive event detection using either IQR or MAD to compute thresholds depending on the detected temporal behaviour.
 
 ## Overview
 
-The pipeline is designed to process daily station-level ridership data and identify dates associated with unusual demand increases that may correspond to massive events.
+The pipeline is designed to process daily station demand data and identify dates associated with unusual demand increases that may correspond to massive events.
 
 The workflow includes:
 
@@ -15,15 +15,14 @@ The workflow includes:
 3. **Computation of CEI/PEI indicators**
 4. **Hampel-based filtering and STL decomposition**
 5. **Adaptive event detection**
-   - **IQR-based detection** for collective event patterns
-   - **MAD-based detection** for punctual event patterns
+   - **IQR-based detection** for collective event behaviours
+   - **MAD-based detection** for punctual event behaviours
 6. **Optional evaluation** against known event calendars
 7. **Optional visualization** for single-station analysis
 8. **CSV export** of detected events
 
 ## Repository contents
 
-```text
 metro-event-detection/
 ├── .gitignore
 ├── README.md

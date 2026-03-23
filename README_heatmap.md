@@ -49,13 +49,11 @@ The input file must contain at least the following columns:
 The user only needs to specify:
 
 * the path to the CSV file
-* the station to visualise
 
 Example:
 
 ```python
 csv_path  = "../data/detection_events/events_detected_all.csv"
-station   = "Estadio Metropolitano"
 ```
 
 The script automatically filters the CSV by the selected station and processes all available years for that station.
@@ -66,6 +64,12 @@ Run the script from the command line:
 
 ```bash
 python heatmap.py
+```
+When executed, the script prompts the user to enter the station name.
+
+Example:
+```text
+Station: Estadio Metropolitano
 ```
 
 Before running it, make sure that:

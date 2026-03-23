@@ -8,7 +8,6 @@ from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 # ========Params
 csv_path     = "../data/detection_events/events_detected_all.csv"
 
-station      = "Ciudad Universitaria"
 value_col    = "resid"
 use_pos_only = True  
 day_lbls_full = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
@@ -23,6 +22,8 @@ F_TIT   = 11
 F_XB    = 6
 BAR_H   = 0.55
 GRID_ALPHA = 0.05
+
+station = input("Station (exact name or All): ").strip()
 
 df = pd.read_csv(csv_path)
 

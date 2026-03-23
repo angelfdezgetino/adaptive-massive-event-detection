@@ -59,13 +59,13 @@ The required Python packages are:
 
 The datasets used in this project are **not publicly available** and are therefore **not included in this repository**.
 
-This repository only provides the source code for the event detection methodology. Users who wish to run the pipeline must provide their own compatible datasets and reproduce the folder structure expected by the script.
+This repository only provides the source code for the event detection algorithm. Users who want to run the pipeline must provide their own compatible datasets and reproduce the folder structure expected by the script.
 
 ## Expected input data
 
 This script expects external CSV files stored in relative paths.
 
-### Main ridership dataset
+### Main dataset
 
 The main input file is expected at:
 
@@ -75,13 +75,13 @@ The main input file is expected at:
 
 This file must contain at least the following columns:
 
-* `FECHA` — date
-* `VALOR` — daily ridership value
-* `NOMBRE` — station name
+* `FECHA` - date
+* `VALOR` - daily card validations value
+* `NOMBRE` - station name
 
 The script also optionally uses:
 
-* `ORDEN` — station order within the metro line
+* `ORDEN` - station order within the metro line
 
 ### Optional ground-truth event files
 
@@ -166,13 +166,12 @@ Station names must match the names available in the input CSV. The year must be 
 For each selected station and year, the script performs the following steps:
 
 1. Load and preprocess the station time series.
-2. Compute the baseline seasonal decomposition.
+2. Compute the seasonal decomposition.
 3. Estimate the CEI and PEI indicators.
 4. Apply the Hampel-based preprocessing and STL decomposition.
 5. Select the detection mode:
-
-   * **IQR-based detection** for collective behavior
-   * **MAD-based detection** for punctual behavior
+   * **IQR-based detection** for collective behaviour
+   * **MAD-based detection** for punctual behaviour
 6. Filter low-level detections.
 7. Compute evaluation metrics when ground-truth data is available.
 8. Save detected events to a CSV file.

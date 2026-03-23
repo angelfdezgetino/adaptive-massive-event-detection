@@ -22,7 +22,7 @@ The workflow includes:
 8. **CSV export** of detected events
 
 ## Repository contents
-
+```text
 metro-event-detection/
 ├── .gitignore
 ├── README.md
@@ -30,7 +30,7 @@ metro-event-detection/
 ├── event_detection_pipeline.py
 └── data/
     └── README.md
-
+```
 ## Main script
 
 The main script in this repository is:
